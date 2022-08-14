@@ -1,6 +1,6 @@
 #include "VertexArray.h"
 
-VertexArray::VertexArray(VertexBuffer* vb, VertexBufferLayout* layout) : vb(vb), layout(layout) {
+VertexArray::VertexArray(VertexBuffer* vb, VertexLayout* layout) : vb(vb) {
 	glGenVertexArrays(1, &mID);
 	glBindVertexArray(mID);
 	vb->Bind();
@@ -9,12 +9,12 @@ VertexArray::VertexArray(VertexBuffer* vb, VertexBufferLayout* layout) : vb(vb),
 
 VertexArray::~VertexArray() {
 	glDeleteVertexArrays(1, &mID);
-	delete vb;
-	delete layout;
+	delete vb.release();
 }
 
-VertexArray* VertexArray::CreateInstance(VertexBuffer* vb, VertexBufferLayout* layout) {
+VertexArray* VertexArray::CreateInstance(VertexBuffer* vb, VertexLayout* layout) {
 	if (vb == nullptr || layout == nullptr) return nullptr;
+
 	return new VertexArray(vb, layout);
 }
 

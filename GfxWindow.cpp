@@ -1,4 +1,5 @@
 #include "GfxWindow.h"
+#include "Mesh.h"
 
 GLDebug globalGLDebug;
 
@@ -69,20 +70,17 @@ std::vector<Renderer*> GfxWindow::PrepareData()
 	const unsigned int indices2[] = { 1, 2, 3 };
 	const unsigned int indices3[] = { 4, 2, 3 };
 
-	VertexBuffer* vb = new VertexBuffer(vertex, 5 * 4 * sizeof(float));
-	VertexBufferLayout* vbLayout = new VertexBufferLayout();
-	vbLayout->AddElement<float>(2);
-	vbLayout->AddElement<float>(2);
+	VertexLayout vbLayout;
+	vbLayout.AddElement<float>(2);
+	vbLayout.AddElement<float>(2);
+	std::shared_ptr<Mesh> mesh1 = std::make_shared<Mesh>(vertex, 5, indices1, 3, vbLayout);
+	std::shared_ptr<Mesh> mesh2 = std::make_shared<Mesh>(vertex, 5, indices2, 3, vbLayout);
+	std::shared_ptr<Mesh> mesh3 = std::make_shared<Mesh>(vertex, 5, indices3, 3, vbLayout);
 
-	std::shared_ptr<VertexArray> vao(VertexArray::CreateInstance(vb, vbLayout));
-	std::shared_ptr <IndexBuffer> ib1 = std::make_shared<IndexBuffer>(indices1, 3);
-	std::shared_ptr <IndexBuffer> ib2 = std::make_shared<IndexBuffer>(indices2, 3);
-	std::shared_ptr <IndexBuffer> ib3 = std::make_shared<IndexBuffer>(indices3, 3);
-
-	Renderer* rdr1 = new Renderer(vao, ib1);
-	Renderer* rdr2 = new Renderer(vao, ib2);
-	Renderer* rdr3 = new Renderer(vao, ib3);
-	std::vector<Renderer*>res {rdr1, rdr2, rdr3};
+	std::vector<Renderer*>res;
+	res.push_back(new Renderer(mesh1));
+	res.push_back(new Renderer(mesh2));
+	res.push_back(new Renderer(mesh3));
 	return res;
 }
 
@@ -94,8 +92,7 @@ void GfxWindow::RenderLoop(const std::vector<Renderer*>& rdrs)
 {
 	glClear(GL_COLOR_BUFFER_BIT);
 
-	for (Renderer* rdr : rdrs) {
-		if (rdr == nullptr) continue;
+	for (const Renderer* rdr : rdrs) {
 		rdr->Draw();
 	}
 	glfwSwapBuffers(mWindow);

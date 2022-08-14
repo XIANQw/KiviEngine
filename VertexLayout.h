@@ -2,7 +2,7 @@
 #include <vector>
 #include <glad/glad.h>
 
-struct VertexBufferAttrib {
+struct VertexAttrib {
 	unsigned int Type;
 	unsigned int Count;
 	unsigned int Size;
@@ -10,15 +10,15 @@ struct VertexBufferAttrib {
 };
 
 
-class VertexBufferLayout
+class VertexLayout
 {
 private:
-	std::vector<VertexBufferAttrib> Attribs;
+	std::vector<VertexAttrib> Attribs;
 public:
 	unsigned int VertexStride;
 
-	VertexBufferLayout():VertexStride(0) {}
-	~VertexBufferLayout() {}
+	VertexLayout():VertexStride(0) {}
+	~VertexLayout() {}
 	
 	template<typename T>
 	void AddElement(unsigned int count)

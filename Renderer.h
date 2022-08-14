@@ -1,17 +1,17 @@
 #pragma once
-#include "VertexArray.h"
-#include "IndexBuffer.h"
+#include "Mesh.h"
+
 #include <memory>
 
 class Renderer
 {
 private:
-	std::shared_ptr<VertexArray> vao;
-	std::shared_ptr <IndexBuffer> ibo;
-public:
-	Renderer(std::shared_ptr<VertexArray> vao, std::shared_ptr<IndexBuffer> ibo) : vao(vao), ibo(ibo) {}
-	~Renderer() { }
+	std::shared_ptr<Mesh> mMesh;
 
-	void Draw();
+public:
+	Renderer(std::shared_ptr<Mesh> mesh);
+	~Renderer();
+
+	void Draw() const;
 };
 

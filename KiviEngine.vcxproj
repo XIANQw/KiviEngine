@@ -144,6 +144,7 @@
     <ClCompile Include="GLDebug.cpp" />
     <ClCompile Include="IndexBuffer.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="VertexArray.cpp" />
@@ -153,11 +154,12 @@
     <ClInclude Include="GfxWindow.h" />
     <ClInclude Include="GLDebug.h" />
     <ClInclude Include="IndexBuffer.h" />
+    <ClInclude Include="Mesh.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="VertexArray.h" />
     <ClInclude Include="VertexBuffer.h" />
-    <ClInclude Include="VertexBufferLayout.h" />
+    <ClInclude Include="VertexLayout.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />

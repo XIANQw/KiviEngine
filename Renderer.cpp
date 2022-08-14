@@ -1,8 +1,15 @@
 #include "Renderer.h"
+#include <iostream>
 
-void Renderer::Draw() {
-	if (vao == nullptr || ibo == nullptr) return;
-	vao->Bind();
-	ibo->Bind();
-	glDrawElements(GL_TRIANGLES, ibo->GetCount(), GL_UNSIGNED_INT, NULL);
+Renderer::Renderer(std::shared_ptr<Mesh> mesh) : mMesh(mesh) {
+}
+
+Renderer::~Renderer() {
+}
+
+
+void Renderer::Draw() const{
+	if (!mMesh) return;
+	mMesh->Bind();
+	glDrawElements(GL_TRIANGLES, mMesh->GetCount(), GL_UNSIGNED_INT, NULL);
 }

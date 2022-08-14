@@ -11,4 +11,9 @@ int main()
 	{
 		gfxWindow.RenderLoop(rdrs);
 	}
+	
+	for (Renderer* rdr : rdrs)
+	{
+		delete rdr;
+	}
 }

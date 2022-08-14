@@ -1,21 +1,21 @@
 #pragma once
 #include "VertexBuffer.h"
-#include "VertexBufferLayout.h"
+#include "VertexLayout.h"
+#include <memory>
 
 class VertexArray
 {
 private:
 	unsigned int mID;
-	VertexBuffer* vb;
-	VertexBufferLayout* layout;
-	VertexArray(VertexBuffer* vb, VertexBufferLayout* layout);
+	std::unique_ptr<VertexBuffer> vb;
 
 public:
+	VertexArray(VertexBuffer* vb, VertexLayout* layout);
 	~VertexArray();
 	inline unsigned int GetID() { return mID; }
 	void Bind();
 	void UnBind();
 
-	static VertexArray* CreateInstance(VertexBuffer* vb, VertexBufferLayout* layout);
+	static VertexArray* CreateInstance(VertexBuffer* vb, VertexLayout* layout);
 };
 

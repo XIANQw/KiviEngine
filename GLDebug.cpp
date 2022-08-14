@@ -26,10 +26,13 @@ GLDebug::~GLDebug() {}
 
 void GLDebug::OutputError(GLenum source, GLenum type, GLuint id, GLenum severity, const GLchar* message) 
 {
-	std::cout <<
-	"serverity: " << mServerity[(int)severity] << std::endl <<
-	"src: " << mSrc[(int)source] << std::endl <<
-	"type: " << mType[(int)type] << std::endl <<
-	"id: " << id << std::endl <<
-	"mgs: " << message << std::endl;
+	//std::cout <<
+	//"serverity: " << mServerity[(int)severity] << std::endl <<
+	//"src: " << mSrc[(int)source] << std::endl <<
+	//"type: " << mType[(int)type] << std::endl <<
+	//"id: " << id << std::endl <<
+	//"mgs: " << message << std::endl;
+
+	printf("serverity: %s\nsrc: %s\ntype: %s\nid: %i\nmsg: %s\n", mServerity[(int)severity].c_str(), mSrc[(int)source].c_str(), mType[(int)type].c_str(), id, message);
+
 }
