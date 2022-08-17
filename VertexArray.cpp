@@ -8,8 +8,8 @@ VertexArray::VertexArray(VertexBuffer* vb, VertexLayout* layout) : vb(vb) {
 }
 
 VertexArray::~VertexArray() {
+	printf("[~VertexArray]id: %d\n", mID);
 	glDeleteVertexArrays(1, &mID);
-	delete vb.release();
 }
 
 VertexArray* VertexArray::CreateInstance(VertexBuffer* vb, VertexLayout* layout) {
