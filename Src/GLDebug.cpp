@@ -33,6 +33,6 @@ void GLDebug::OutputError(GLenum source, GLenum type, GLuint id, GLenum severity
 	//"id: " << id << std::endl <<
 	//"mgs: " << message << std::endl;
 
-	printf("serverity: %s\nsrc: %s\ntype: %s\nid: %i\nmsg: %s\n", mServerity[(int)severity].c_str(), mSrc[(int)source].c_str(), mType[(int)type].c_str(), id, message);
+	printf("serverity: %s\nsrc: %s\ntype: %s\nid: %i\nmsg: %s\n\n\n\n", mServerity[(int)severity].c_str(), mSrc[(int)source].c_str(), mType[(int)type].c_str(), id, message);
 
 }

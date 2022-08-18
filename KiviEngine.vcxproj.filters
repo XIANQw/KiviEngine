@@ -15,67 +15,79 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="glad.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="GfxWindow.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="GLDebug.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="IndexBuffer.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="VertexArray.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="VertexBuffer.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Renderer.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Shader.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Mesh.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="GfxWindow.h">
+    <ClInclude Include="Include\GfxWindow.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="GLDebug.h">
+    <ClInclude Include="Include\GLDebug.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="IndexBuffer.h">
+    <ClInclude Include="Include\IndexBuffer.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="VertexArray.h">
+    <ClInclude Include="Include\Mesh.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="VertexBuffer.h">
+    <ClInclude Include="Include\Renderer.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="VertexLayout.h">
+    <ClInclude Include="Include\Shader.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Renderer.h">
+    <ClInclude Include="Include\VertexArray.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Shader.h">
+    <ClInclude Include="Include\VertexBuffer.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Mesh.h">
+    <ClInclude Include="Include\VertexLayout.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\GLAD\include\glad\glad.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\GLAD\include\KHR\khrplatform.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\GLFW\include\glfw3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\GLFW\include\glfw3native.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Src\GfxWindow.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GLDebug.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\IndexBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Mesh.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Renderer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\VertexArray.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\VertexBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Dependencies\glad.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

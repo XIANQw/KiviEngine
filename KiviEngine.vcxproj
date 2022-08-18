@@ -71,11 +71,11 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)\Dependencies\GLAD\include;$(SolutionDir)\Dependencies\GLFW\include</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)\Dependencies\GLAD\include;$(SolutionDir)\Dependencies\GLFW\include;$(SolutionDir)\Include</IncludePath>
     <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)\Dependencies\GLAD\include;$(SolutionDir)\Dependencies\GLFW\include</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)\Dependencies\GLAD\include;$(SolutionDir)\Dependencies\GLFW\include;$(SolutionDir)\Include</IncludePath>
     <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -139,30 +139,35 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="glad.c" />
-    <ClCompile Include="GfxWindow.cpp" />
-    <ClCompile Include="GLDebug.cpp" />
-    <ClCompile Include="IndexBuffer.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="Mesh.cpp" />
-    <ClCompile Include="Renderer.cpp" />
-    <ClCompile Include="Shader.cpp" />
-    <ClCompile Include="VertexArray.cpp" />
-    <ClCompile Include="VertexBuffer.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="GfxWindow.h" />
-    <ClInclude Include="GLDebug.h" />
-    <ClInclude Include="IndexBuffer.h" />
-    <ClInclude Include="Mesh.h" />
-    <ClInclude Include="Renderer.h" />
-    <ClInclude Include="Shader.h" />
-    <ClInclude Include="VertexArray.h" />
-    <ClInclude Include="VertexBuffer.h" />
-    <ClInclude Include="VertexLayout.h" />
+    <ClInclude Include="Dependencies\GLAD\include\glad\glad.h" />
+    <ClInclude Include="Dependencies\GLAD\include\KHR\khrplatform.h" />
+    <ClInclude Include="Dependencies\GLFW\include\glfw3.h" />
+    <ClInclude Include="Dependencies\GLFW\include\glfw3native.h" />
+    <ClInclude Include="Include\GfxWindow.h" />
+    <ClInclude Include="Include\GLDebug.h" />
+    <ClInclude Include="Include\IndexBuffer.h" />
+    <ClInclude Include="Include\Mesh.h" />
+    <ClInclude Include="Include\Renderer.h" />
+    <ClInclude Include="Include\Shader.h" />
+    <ClInclude Include="Include\VertexArray.h" />
+    <ClInclude Include="Include\VertexBuffer.h" />
+    <ClInclude Include="Include\VertexLayout.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
+    <None Include="Artwork\Shader\dark-red.shader" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Dependencies\glad.c" />
+    <ClCompile Include="Src\GfxWindow.cpp" />
+    <ClCompile Include="Src\GLDebug.cpp" />
+    <ClCompile Include="Src\IndexBuffer.cpp" />
+    <ClCompile Include="Src\main.cpp" />
+    <ClCompile Include="Src\Mesh.cpp" />
+    <ClCompile Include="Src\Renderer.cpp" />
+    <ClCompile Include="Src\Shader.cpp" />
+    <ClCompile Include="Src\VertexArray.cpp" />
+    <ClCompile Include="Src\VertexBuffer.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

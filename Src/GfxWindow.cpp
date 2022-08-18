@@ -77,10 +77,15 @@ std::vector<Renderer*> GfxWindow::PrepareData()
 	std::shared_ptr<Mesh> mesh2 = std::make_shared<Mesh>(vertex, 5, indices2, 3, vbLayout);
 	std::shared_ptr<Mesh> mesh3 = std::make_shared<Mesh>(vertex, 5, indices3, 3, vbLayout);
 
+	std::shared_ptr<Shader> shader = std::make_shared<Shader>("Artwork\\Shader\\default.shader");
+	std::shared_ptr<Shader> shader2 = std::make_shared<Shader>("Artwork\\Shader\\default.shader");
+	shader->SetVec4("setColor", 0.5, 0.5, 0.5, 1);
+	shader2->SetVec4("setColor", 0.5, 0, 0, 1);
+
 	std::vector<Renderer*>res;
-	res.push_back(new Renderer(mesh1));
-	res.push_back(new Renderer(mesh2));
-	res.push_back(new Renderer(mesh3));
+	res.push_back(new Renderer(mesh1, shader));
+	res.push_back(new Renderer(mesh2, shader2));
+	res.push_back(new Renderer(mesh3, shader2));
 	return res;
 }
 
