@@ -35,10 +35,10 @@ int Shader::GetPropertyID(const std::string& name) {
 	return propertyID;
 }
 
-void Shader::SetVec4(const std::string& name, float x, float y, float z, float w) {
+void Shader::SetVec4(const std::string& name, const glm::vec4& vec4) {
 	Bind();
 	int propertyID = GetPropertyID(name);
-	glUniform4f(propertyID, x, y, z, w);
+	glUniform4f(propertyID, vec4.x, vec4.y, vec4.z, vec4.w);
 }
 
 std::string* Shader::GetSrcCode(const char* shaderName) {

@@ -1,6 +1,8 @@
 #pragma once
 #include <string>;
 #include <unordered_map>
+#include <glm/glm.hpp>
+
 class Shader
 {
 public:
@@ -24,6 +26,6 @@ public:
 	~Shader();
 	void Bind();
 	int GetPropertyID(const std::string& name);
-	void SetVec4(const std::string& name, float x, float y, float z, float w);
+	void SetVec4(const std::string& name, const glm::vec4& vec4);
 };
 

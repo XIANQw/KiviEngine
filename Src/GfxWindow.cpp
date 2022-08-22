@@ -79,8 +79,8 @@ std::vector<Renderer*> GfxWindow::PrepareData()
 
 	std::shared_ptr<Shader> shader = std::make_shared<Shader>("Artwork\\Shader\\default.shader");
 	std::shared_ptr<Shader> shader2 = std::make_shared<Shader>("Artwork\\Shader\\default.shader");
-	shader->SetVec4("setColor", 0.5, 0.5, 0.5, 1);
-	shader2->SetVec4("setColor", 0.5, 0, 0, 1);
+	shader->SetVec4("setColor", glm::vec4(0.5, 0.5, 0.5, 1));
+	shader2->SetVec4("setColor", glm::vec4(0.5, 0, 0, 1));
 
 	std::vector<Renderer*>res;
 	res.push_back(new Renderer(mesh1, shader));
